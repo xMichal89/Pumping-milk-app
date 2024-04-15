@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karmienie i odciąganie mleka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/da775089c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Karmienie i odciąganie mleka</h1>
+        <div class="list-box">
+
+            <ul>
+                <li>
+                    <div class="info">
+                        <p><span class="hour">15</span>:<span class="minut">00</span> | <span
+                                class="type-action">K</span> <span class="volume">90</span> <span
+                                class="comment">L</span></p>
+                        <p><span class="date">3.04.2024</span></p>
+                    </div>
+                    <div class="tools">
+                        <button class="edit"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="delete"><i class="fas fa-times"></i></button>
+                    </div>
+                </li>
+                <li class="pumping">
+                    <div class="info">
+                        <p><span class="hour">16</span>:<span class="minut">20</span> | <span
+                                class="type-action">KO</span> <span class="volume">100</span> <span
+                                class="comment">L1</span></p>
+                        <p><span class="date">3.04.2024</span></p>
+                    </div>
+                    <div class="tools">
+                        <button class="edit"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="delete"><i class="fas fa-times"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <p><span class="hour">17</span>:<span class="minut">40</span> | <span
+                                class="type-action">O</span> <span class="volume">110</span> <span
+                                class="comment">L2</span></p>
+                        <p><span class="date">3.04.2024</span></p>
+                    </div>
+                    <div class="tools">
+                        <button class="edit"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="delete"><i class="fas fa-times"></i></button>
+                    </div>
+                </li>
+            </ul>
+            <button class="delete-all">Usuń wszystko</button>
+        </div>
+
+        <div class="add-position">
+            <table>
+                <tr>
+                    <td><label for="hour">Godzina:</label></td>
+                    <td><label for="minute">Minuta:</label></td>
+                    <td><label for="type-action">Karmienie/Odciąganie</label></td>
+
+                </tr>
+                <tr>
+                    <td><input class="add-hours" type="number" min="0" max="23" id="hour"></td>
+                    <td><input class="add-minute" type="number" min="0" max="59" id="minute" ></td>
+                    <td><select class="add-action" id="type-action">
+                            <option value="0" disabled selected>- Karmienie / Odciąganie -</option>
+                            <option value="K">Karmienie</option>
+                            <option value="O">Odciąganie</option>
+                            <option value="KO">Karmienie i Odciąganie</option>
+                        </select></td>
+
+                </tr>
+                <tr>
+                    <td><label for="volume">Pojemność:</label></td>
+                    <td colspan="2"><label for="comment">Uwagi:</label></td>
+
+                </tr>
+                <tr>
+                    <td><input class="add-volume" type="number" id="volume"></td>
+                    <td colspan="2"><input class="add-comment" type="text" id="comment"></td>
+                </tr>
+            </table>
+            <p class="add-error">Uzupełnij wszystkie pola</p>
+            <button class="add">Dodaj</button>
+        </div>
+
+        <div class="counter">
+            <h3 id="pump-time">Kolejne odciąganie za:</h3>
+            <div class="counter-btns">
+                <button class="start">Start</button>
+                <button class="reset">Reset</button>
+            </div>
+            <div class="count-cards">
+                <div class="card">
+                    <p class="hours-count number">2</p>
+                    <p class="card-title">Godzin</p>
+                </div>
+                <div class="card">
+                    <p class="minutes-count number">59</p>
+                    <p class="card-title">Minut</p>
+                </div>
+                <div class="card">
+                    <p class="seconds-count number">59</p>
+                    <p class="card-title">Sekund</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup">
+            <h3>Edytuj pozycję:</h3>
+            <table>
+                <tr>
+                    <td><label for="hour">Godzina:</label></td>
+                    <td><label for="minute">Minuta:</label></td>
+                    <td><label for="type-action">Karmienie/Odciąganie</label></td>
+
+                </tr>
+                <tr>
+                    <td><input class="popup-hours" type="number" id="hour" min="0" max="23"></td>
+                    <td><input class="popup-minute" type="number" id="minute" min="0" max="59"></td>
+                    <td><select class="popup-action" id="type-action">
+                            <option value="0" disabled selected>- Karmienie / Odciąganie -</option>
+                            <option value="K">Karmienie</option>
+                            <option value="O">Odciąganie</option>
+                            <option value="KO">Karmienie i Odciąganie</option>
+                        </select></td>
+
+                </tr>
+                <tr>
+                    <td><label for="volume">Pojemność:</label></td>
+                    <td colspan="2"><label for="comment">Uwagi:</label></td>
+
+                </tr>
+                <tr>
+                    <td><input class="popup-volume" type="number" id="volume"></td>
+                    <td colspan="2"><input class="popup-comment" type="text" id="comment"></td>
+                </tr>
+            </table>
+            <div class="popup-btns">
+                <button class="cancel">Anuluj</button>
+                <button class="save">Zapisz</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
